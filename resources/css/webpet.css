@@ -1,0 +1,43 @@
+.wp_progress-container{
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 25px;
+    position: absolute;
+    top: -10px;
+    visibility:  hidden;
+  }
+  .wp_container:hover .wp_progress-container{
+      visibility: visible;
+  }
+.wp_progress-bar{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-color: #4CAF50;
+}
+
+.wp_pet-angry {
+    width: 100px; height: 100px;
+    background: url("/resources/img/pet.png") -0 -0;
+}
+.wp_pet-basic {
+    width: 100px; height: 100px;
+    background: url("/resources/img/pet.png") -100px -0;
+}
+.wp_pet-super-happy {
+    width: 100px; height: 100px;
+    background: url("/resources/img/pet.png") -0 -100px;
+}
+.wp_pet-happy {
+    width: 100px; height: 100px;
+    background: url("/resources/img/pet.png") -100px -100px;
+}
+.wp_pet-sad {
+    width: 100px; height: 100px;
+    background: url("/resources/img/pet.png") -200px -0;
+}
+.wp_pet-shy {
+    width: 100px; height: 100px;
+    background: url("/resources/img/pet.png") -200px -100px;
+}

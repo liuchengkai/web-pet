@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>fish time</title>
+    </head>
+    <body>
+        <div id="fish"></div>
+        <div class="container"><div>aa</div></div>
+    <script src="dist/web-pet.js">
+    </script>
+    <script>
+        const MyPet = WebPet.createPet({
+            style: {
+                left: '20px',
+                right: '20px'
+            },
+            img_url: '/resources/img/pet.png'
+        })
+        MyPet.mount("#fish")
+    </script>
+    </body>
+</html>
