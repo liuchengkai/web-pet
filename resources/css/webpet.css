@@ -19,25 +19,25 @@
 
 .wp_pet-angry {
     width: 100px; height: 100px;
-    background: url("/resources/img/pet.png") -0 -0;
+    background: url("./resources/img/pet.png") -0 -0;
 }
 .wp_pet-basic {
     width: 100px; height: 100px;
-    background: url("/resources/img/pet.png") -100px -0;
+    background: url("./resources/img/pet.png") -100px -0;
 }
 .wp_pet-super-happy {
     width: 100px; height: 100px;
-    background: url("/resources/img/pet.png") -0 -100px;
+    background: url("./resources/img/pet.png") -0 -100px;
 }
 .wp_pet-happy {
     width: 100px; height: 100px;
-    background: url("/resources/img/pet.png") -100px -100px;
+    background: url("./resources/img/pet.png") -100px -100px;
 }
 .wp_pet-sad {
     width: 100px; height: 100px;
-    background: url("/resources/img/pet.png") -200px -0;
+    background: url("./resources/img/pet.png") -200px -0;
 }
 .wp_pet-shy {
     width: 100px; height: 100px;
-    background: url("/resources/img/pet.png") -200px -100px;
+    background: url("./resources/img/pet.png") -200px -100px;
 }

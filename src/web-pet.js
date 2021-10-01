@@ -23,7 +23,7 @@ export function createRenderer({querySeletcor, setSize}){
                         if(sheet.cssRules[0].selectorText.indexOf('.wp_')!=-1){
                             for(let cssRule of sheet.cssRules){
                                 if(cssRule.selectorText.indexOf('.wp_pet-')!=-1){
-                                    cssRule.style.cssText = cssRule.style.cssText.replace('/resources/img/pet.png', options.img_url)
+                                    cssRule.style.cssText = cssRule.style.cssText.replace('./resources/img/pet.png', options.img_url)
                                 }
                             }
                             break
