@@ -216,8 +216,8 @@ export function createRenderer({querySeletcor, setSize}){
                         wander_interval: {
                             min: 500,
                             max: 20000,
-                        }
-                        //img_url: '/resources/img/pet.png',
+                        },
+                        img_url: './resources/img/pet.png',
                     }
                     options = deepAssign(_options, options)
                     const container = querySeletcor(selector)
