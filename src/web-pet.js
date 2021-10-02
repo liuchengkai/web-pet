@@ -1,7 +1,7 @@
 import {enableGesture} from './gesture'
 import '../resources/css/webpet.css'
 import {deepAssign, observeUpdate, rand, throttle} from './utils'
-
+import * as PIXI from 'pixi.js'
 
 export function createRenderer({querySeletcor, setSize}){
     return {   
@@ -11,6 +11,7 @@ export function createRenderer({querySeletcor, setSize}){
                     this.wander_timer = null
                     this.wander_timeout = null
                     this.isWander = false
+                    setSize(el, options.width, options.height)
                     // Init options value
                     this.happiness_decreasing = options.happiness_decreasing
                     this.wander_interval = options.wander_interval
@@ -30,8 +31,33 @@ export function createRenderer({querySeletcor, setSize}){
                         }
                     }
                     // *******************************************************
+                    // Initialize pixi app *************************************
+                    const pixi_app = new PIXI.Application({
+                        width: parseInt(el.clientWidth),
+                        height: el.clientHeight,
+                        backgroundAlpha: 0,
+                    })
+                    el.append(pixi_app.view)
+                    // ******************************************************
+                    // Add pet **********************************************
+                    // load the texture we need
+                    const loader = new PIXI.Loader()
+                    loader.add('pet', options.img_url).load((loader, resources) => {
+                        const pet_test = new PIXI.Sprite(resources.pet.texture);
+
+                        pet_test.x = pixi_app.renderer.width / 2;
+                        pet_test.y = pixi_app.renderer.height / 2;
+
+                        pet_test.anchor.x = 0.5;
+                        pet_test.anchor.y = 0.5;
+                        pixi_app.stage.addChild(pet_test);
+   
+                        pixi_app.ticker.add(() => {
+                            pet_test.rotation += 0.01;
+                        })
+                    })
+                    // ******************************************************
                     // Append pet image *************************************
-                    setSize(el, options.width, options.height)
                     const pet = document.createElement('div')
                     pet.classList.add('wp_pet-super-happy')
                     el.appendChild(pet)
@@ -208,6 +234,10 @@ export function createRenderer({querySeletcor, setSize}){
                             position: 'fixed',
                             width: '100px',
                             height: '100px'
+                        },
+                        container: {
+                            width: 100,
+                            height: 100
                         },
                         happiness_decreasing: {
                             time: 1000,
